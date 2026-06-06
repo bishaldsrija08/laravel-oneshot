@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BlogController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -19,3 +20,6 @@ Route::get("/about/{name}", function($name) {
 });
 
 Route::redirect('/about', '/about/John');
+
+
+Route::get("/blog", [BlogController::class, 'index'])->name('blog.index');
